@@ -1,1 +1,1 @@
-# educationplatform
+# SPS Group Project - Education Platfrom

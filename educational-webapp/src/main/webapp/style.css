@@ -1,0 +1,42 @@
+#background {
+    background-color: rgba(66, 214, 237, 0.7);
+}
+
+#appTitle {
+    text-align: center;
+    padding: 10px;
+}
+
+#nav-bar {
+    width: 50%;
+    margin: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul{
+    display: flex;
+    padding: 9px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: .35rem;
+}
+
+#row-one-colors {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    margin-top: 10%;
+    margin-left: 15%
+}
+
+#color-border {
+    border: 1px solid black;
+}

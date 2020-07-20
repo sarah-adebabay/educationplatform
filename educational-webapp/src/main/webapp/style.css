@@ -1,4 +1,7 @@
 /*CSS for Colors Page*/
+@import url(https://fonts.googleapis.com/css?family=Margarine);
+@import url(https://fonts.googleapis.com/css?family=Londrina%20Shadow);
+
 #background {
     /*background-color: rgba(66, 214, 237, 0.7); */
     background-image: url(images/back.jpg);
@@ -6,6 +9,8 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgba(255, 255, 255, 0.25);
+    background-blend-mode: lighten;
 }
 
 #alphabetBackground {
@@ -18,15 +23,28 @@
 }
 
 #appTitle {
-    color: wheat;
+    color: black;
     text-align: center;
     padding: 10px;
+    font-family: 'Londrina Shadow';
+    font-size: 300%;
+}
+
+#title-background {
+    background-color: #eae2e28f;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 #nav-bar {
-    width: 50%;
+    width: 75%;
     margin: auto;
     padding-bottom: 5px;
+    font-family: 'Londrina Shadow';
+    font-size: 30px;
 }
 
 #nav-link{
@@ -35,16 +53,18 @@
     margin-right: auto;
 }
 
-a{
+a, a:visited {
     text-decoration: none;
+    color: black;
 }
 
 #all-nav-links{
     display: flex;
     padding: 9px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: .35rem;
+    border: 1.3px solid black;
+    border-radius: 11rem;
+    color: black;
+    background: #ffffffbd;
 }
 
 #transparent-background {
@@ -53,19 +73,37 @@ a{
 
 #color-rows {
     display: grid;
-    grid-template-columns: 20% 5% 20% 5% 20% 5% 20%;
-    margin-top: 3%;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    text-align: center;
-    height: 200px;
+    grid-gap: 30px;
+    grid-template-columns: auto auto auto auto;
+    padding: 30px;
+    color: white;
+
 }
 
-#color-border {
-    border: 1px solid black;
-    border-radius: .12rem;
+#color-page-backgroundBox {
+    border-radius: 2rem;
+    /*background: #f9f4ffe8; */
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+#color-item {
+    border-radius: .8rem;
     padding-top: 40%;
     padding-bottom: 40%;
+    text-align: center;
+    font-family: 'Margarine';
+    box-shadow: 3px 3px 3px #aaaaaa;
+    border-bottom-style: solid;
+    border-bottom-color: hsla(89, 43%, 10%, 0.3);
+    border-top-style: solid;
+    border-top-color: hsla(89, 20%, 90%, 0.3);
+}
+
+#color-item:hover {
+    transform: translate(0, -10px);
 }
 
 .red-card {
@@ -73,14 +111,9 @@ a{
     
 }
 
-.red-card:hover {
-    background-color: rgba(243, 0, 0, 0.911);
-    border: 2px solid white;
-    transition: background-color 500ms, color 500ms; 
-}
-
 .yellow-card {
-    background-color: yellow;
+    background-color: #fdd835;
+    color: #373822;
 }
 
 .orange-card {
@@ -109,12 +142,15 @@ a{
 }
 
 #color-game-button {
-    margin-left: 45%;
-    width: 150px;
-    height: 38px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 2rem;
     color: black;
-    background: #ffffff4a;
-    transition: background-color 500ms, color 500ms;  
+    background: white;
+    font-family: 'Margarine';
+    transition: background-color 500ms, color 500ms;
+    margin-bottom: 10%;
 }
 
 #color-game-button:hover {
@@ -135,4 +171,9 @@ a{
   border: 1px solid rgb(255,255,255); */
   padding: 5px;
   text-align: center;
+}
+
+#game-button-container {
+    width: 200px;
+    margin: auto;
 }

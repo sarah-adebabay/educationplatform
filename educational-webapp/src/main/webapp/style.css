@@ -2,8 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Margarine);
 @import url(https://fonts.googleapis.com/css?family=Londrina%20Shadow);
 
-#background {
-    /*background-color: rgba(66, 214, 237, 0.7); */
+#color-background {
     background-image: url(images/back.jpg);
     background-position: center center;
     background-attachment: fixed;
@@ -44,7 +43,7 @@
     margin: auto;
     padding-bottom: 5px;
     font-family: 'Londrina Shadow';
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #nav-link{
@@ -65,10 +64,6 @@ a, a:visited {
     border-radius: 11rem;
     color: black;
     background: #ffffffbd;
-}
-
-#transparent-background {
-    background: #ffffff9c;
 }
 
 #color-rows {
@@ -173,7 +168,36 @@ a, a:visited {
   text-align: center;
 }
 
-#game-button-container {
+#game-button-container{
     width: 200px;
     margin: auto;
+}
+
+/*CSS for Home Page*/
+#home-background {
+    background-color: rgba(197, 172, 255, 0.466);
+}
+
+#HomeTitle {
+    text-align: center;
+    font-size: 325%;
+    font-family: 'Londrina Shadow';
+}
+
+#home-container {
+    background: rgba(255, 224, 251, 0.45);
+    padding: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#purpose-statement {
+    text-align: center;
+    font-family: 'Margarine';
+    font-size: 140%;
+
+}
+
+.home-nav {
+    margin-top: 150px;
 }

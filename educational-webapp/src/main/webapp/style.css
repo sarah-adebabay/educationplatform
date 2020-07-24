@@ -12,6 +12,24 @@
     background-blend-mode: lighten;
 }
 
+#alphabetBackground {
+    /*background-color: rgba(66, 214, 237, 0.7); */
+    /* background-image: url(images/alphabet/alphabet-background.jpg); */
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#colorquiz-background {
+    background-image: url(images/back.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+
 #appTitle {
     color: black;
     text-align: center;
@@ -172,6 +190,12 @@ a, a:visited {
 .home-nav {
     margin-top: 150px;
 }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 500px;
 
 /* CSS for Colors game */
 .grid {

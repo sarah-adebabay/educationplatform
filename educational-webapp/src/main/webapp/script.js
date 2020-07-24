@@ -79,3 +79,134 @@ function alphabetAudio(letter) {
         zAudio.play();
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  //card options
+  const cardArray = [
+    {
+      name: 'blue',
+      img: 'images/colors/blue.jpg'
+    },
+    {
+      name: 'green',
+      img: 'images/colors/green.jpg'
+    },
+    {
+      name: 'red',
+      img: 'images/colors/red.jpg'
+    },
+    {
+      name: 'yellow',
+      img: 'images/colors/yellow.jpg'
+    },
+    {
+      name: 'red',
+      img: 'images/colors/red.jpg'
+    },
+    {
+      name: 'black',
+      img: 'images/colors/black.jpg'
+    },
+    {
+      name: 'blue',
+      img: 'images/colors/blue.jpg'
+    },
+    {
+      name: 'brown',
+      img: 'images/colors/brown.jpg'
+    },
+    {
+      name: 'yellow',
+      img: 'images/colors/yellow.jpg'
+    },
+    {
+      name: 'brown',
+      img: 'images/colors/brown.jpg'
+    },
+    {
+      name: 'green',
+      img: 'images/colors/green.jpg'
+    },
+    {
+      name: 'black',
+      img: 'images/colors/black.jpg'
+    }
+  ]
+
+  // randomly assign values to objects and then sort those values
+  cardArray.sort(() => 0.5 - Math.random())
+  // layout
+  const grid = document.querySelector('.grid')
+  // display score
+  const resultDisplay = document.querySelector('#result')
+  // create empty lists
+  var cardsChosen = []
+  var cardsChosenId = []
+  const cardsWon = []
+
+  //create your board
+  function createBoard() {
+    for (let i = 0; i < cardArray.length; i++) {
+      var card = document.createElement('img')
+      // set new attributes 
+      card.setAttribute('src', 'images/colors/card.png')
+      card.setAttribute('data-id', i)
+      // listener "listens" for clicks
+      card.addEventListener('click', flipCard)
+      grid.appendChild(card)
+    }
+  }
+
+  //check for matches
+  function checkForMatch() {
+    var cards = document.querySelectorAll('img')
+    const optionOneId = cardsChosenId[0]
+    const optionTwoId = cardsChosenId[1]
+    
+    // check to see if player clicks on the same card twice
+    if(optionOneId == optionTwoId) {
+      // leave cards face down  
+      cards[optionOneId].setAttribute('src', 'images/colors/card.png')
+      cards[optionTwoId].setAttribute('src', 'images/colors/card.png')
+      alert('You have clicked the same image!')
+    }
+    // check to see if both cards selected match
+    else if (cardsChosen[0] === cardsChosen[1]) {
+      alert('It is a match!')
+      // replace two cards with a white space when they match
+      cards[optionOneId].setAttribute('src', 'images/colors/white.png')
+      cards[optionTwoId].setAttribute('src', 'images/colors/white.png')
+      cards[optionOneId].removeEventListener('click', flipCard)
+      cards[optionTwoId].removeEventListener('click', flipCard)
+     // update list
+      cardsWon.push(cardsChosen)
+    } else {
+        // don't flip cards over if not a match  
+      cards[optionOneId].setAttribute('src', 'images/colors/card.png')
+      cards[optionTwoId].setAttribute('src', 'images/colors/card.png')
+      alert('Sorry, it is not a match. Try again!')
+    }
+    cardsChosen = []
+    cardsChosenId = []
+    resultDisplay.textContent = cardsWon.length
+    // check to see if all cards have been found
+    if  (cardsWon.length === cardArray.length/2) {
+      resultDisplay.textContent = 'Congrats, you found all the cards!'
+    }
+  }
+
+  // flip card function
+  function flipCard() {
+    var cardId = this.getAttribute('data-id')
+    // adds selected cards to list
+    cardsChosen.push(cardArray[cardId].name)
+    cardsChosenId.push(cardId)
+    this.setAttribute('src', cardArray[cardId].img)
+    // user must select two cards
+    if (cardsChosen.length ===2) {
+      setTimeout(checkForMatch, 500)
+    }
+  }
+
+  createBoard()
+})

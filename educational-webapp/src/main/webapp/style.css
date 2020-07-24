@@ -174,8 +174,21 @@ a, a:visited {
 #purpose-statement {
     text-align: center;
     font-family: 'Margarine';
-    font-size: 135%;
-    padding-bottom: 2%;
+    font-size: 140%;
+}
+
+.home-nav {
+    margin-top: 150px;
+}
+
+/* CSS for Colors game */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 400px;
+  font-size: 135%;
+  padding-bottom: 2%;
 }
 
 .fun {
